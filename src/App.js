@@ -7,6 +7,7 @@ import './styles/app.scss'
 import Controls from './components/Controls'
 import Track from './components/Track'
 import Library from './components/Library'
+import Nav from './components/Nav'
 
 // import util
 import data from './util'
@@ -19,9 +20,14 @@ function App() {
 	const [tracks, setTracks] = useState(data())
 	const [currentTrack, setCurrentTrack] = useState(tracks[0])
 	const [isPlaying, setIsPlaying] = useState(false)
+	const [libraryToggled, setLibraryToggled] = useState(false)
 
 	return (
 		<div className='App'>
+			<Nav
+				libraryToggled={libraryToggled}
+				setLibraryToggled={setLibraryToggled}
+			/>
 			<Track currentTrack={currentTrack} />
 			<Controls
 				currentTrack={currentTrack}
@@ -35,6 +41,7 @@ function App() {
 				setCurrentTrack={setCurrentTrack}
 				setTracks={setTracks}
 				isPlaying={isPlaying}
+				libraryToggled={libraryToggled}
 			/>
 		</div>
 	)

@@ -1,8 +1,15 @@
 import LibraryTrack from './LibraryTrack'
 
-const Library = ({ tracks, setCurrentTrack, audioRef, isPlaying, setTracks }) => {
+const Library = ({
+	tracks,
+	setCurrentTrack,
+	audioRef,
+	isPlaying,
+	setTracks,
+	libraryToggled,
+}) => {
 	return (
-		<div className='library'>
+		<div className={`library${libraryToggled ? ' active-library' : ''}`}>
 			<h2>Library</h2>
 			<div className='library-tracks'>
 				{tracks.map(track => (

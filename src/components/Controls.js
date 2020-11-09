@@ -6,7 +6,7 @@ import {
 	faPlay,
 	faAngleLeft,
 	faAngleRight,
-	faPause
+	faPause,
 } from '@fortawesome/free-solid-svg-icons'
 
 const Controls = ({ currentTrack, isPlaying, setIsPlaying, audioRef }) => {
@@ -43,7 +43,7 @@ const Controls = ({ currentTrack, isPlaying, setIsPlaying, audioRef }) => {
 				<p>{formatTime(trackInfo.currentTime)}</p>
 				<input
 					min={0}
-					max={trackInfo.duration}
+					max={trackInfo.duration || 0}
 					value={trackInfo.currentTime}
 					onChange={dragRangeHandler}
 					type='range'
