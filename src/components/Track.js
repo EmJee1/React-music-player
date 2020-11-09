@@ -1,9 +1,9 @@
-const Track = () => {
+const Track = ({ currentTrack }) => {
 	return (
 		<div className='track-wrapper'>
-			<h1>Picture</h1>
-			<h1>Song Name</h1>
-			<h1>Artist</h1>
+			<img alt={currentTrack.name + ' cover image'} src={currentTrack.cover} />
+			<h2>{currentTrack.name}</h2>
+			<h3>{currentTrack.artist}</h3>
 		</div>
 	)
 }
